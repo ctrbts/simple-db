@@ -1,0 +1,22 @@
+{
+    "name": "ctrbts/simple-db",
+    "description": "Una librería ligera de abstracción de base de datos PDO (Refactorizada)",
+    "type": "library",
+    "license": "LGPL-3.0-only",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SimpleDb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fernando Merlo",
+            "email": "fdomerlo@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
