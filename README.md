@@ -2,7 +2,7 @@
 
 Una librería de abstracción de base de datos ligera y segura para PHP, basada en PDO. Diseñada para funcionar como un query builder simple o una capa tipo ORM en aplicaciones MVC.
 
-Este repositorio contiene una versión modernizada y refactorizada del clásico PDODb manteniendo la compatibilidad con el código existente.
+Este repositorio contiene una versión modernizada y refactorizada del clásico PDODb manteniendo las llamadas a los métodos originales para asegurar la compatibilidad con código existente.
 
 ## Requisitos
 
@@ -31,8 +31,17 @@ Esta librería ha sido actualizada para cumplir con estándares modernos de PHP 
 
 Nota de compatibilidad: Aunque el código interno ha cambiado drásticamente, se han conservado los nombres de todos los métodos públicos y el orden de sus parámetros para asegurar que tu código existente funcione con mínimos cambios.
 
-## Uso Básico
+## ¿Por qué existe esta versión?
 
+Si conoces la librería original de tommyknocker, notarás que su versión 2.0+ ha evolucionado hacia un framework de base de datos completo con ORM, migraciones y CLI, similar a Eloquent o Doctrine.
+
+Esta refactorización (SimpleDb) mantiene la filosofía original:
+
+- Ligereza: Todo el código reside en una sola clase. No hay sobrecarga de cientos de archivos incluidos.
+- Simplicidad: Es un drop-in replacement para sistemas legacy o frameworks ligeros que solo necesitan un wrapper de PDO robusto y un Query Builder, sin la complejidad de un Active Record completo.
+- Control: Ideal para desarrolladores que quieren entender y controlar exactamente qué consultas se ejecutan sin capas de abstracción "mágicas".
+
+## Uso Básico
 
 ```php
 use SimpleDb\BaseModel;
@@ -96,7 +105,9 @@ Las contribuciones son bienvenidas. Por favor asegura que cualquier cambio pase 
 
 ## Créditos y Reconocimientos
 
-Esta refactorización y modernización del código fue realizada con asistencia de IA, enfocándose en la seguridad, el tipado estricto y el rendimiento, siguiendo el mismo proceso de calidad aplicado en proyectos similares como la [Refactorización de TimThumb](https://github.com/ctrbts/secure-timthumb).
+Trabajo Original: Este proyecto es un fork modernizado de la librería [pdo-database-class](https://github.com/tommyknocker/pdo-database-class) creada por tommyknocker. Se basa en la arquitectura de la versión 1.x, antes de que el proyecto original evolucionara hacia un framework completo en su versión 2.0.
+
+Refactorización: La modernización a PHP 8, tipado estricto y mejoras de seguridad fue realizada con la asistencia de IA, siguiendo el mismo proceso de calidad aplicado en proyectos similares como la [Refactorización de TimThumb](https://github.com/ctrbts/secure-timthumb).
 
 ## Licencia
 
